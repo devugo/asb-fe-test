@@ -3,7 +3,7 @@ import './table.scss';
 
 const Table = () => {
     return (
-        <div className="asb-table">
+        <div className="asb-table animate__animated  animate__fadeInUp ">
             <TableRow header />
             <TableRow
                 name="Courtney Henry"

@@ -43,26 +43,18 @@
     .summary-card {
         width: 258px;
     }
- }
-
-// @include media-md {
-//     .summary-card {
-//         width: 200px;
-//         .card-body {
-    
-//             h3 {
-//                 font-size: 32px;
-//             }
-    
-//             p {
-//                 font-size: 16px;
-//             }
-//         }
-//     }
-// }
+}
 
 @include media-lg {
     .summary-card {
         margin: 20px 0;
+    }
+}
+
+
+
+@for $i from 1 through 5 {
+    .summary-card:nth-child(#{$i}) {
+        animation-duration: ( $i * 0.3s) + 0.15s;
     }
 }

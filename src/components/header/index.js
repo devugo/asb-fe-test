@@ -25,7 +25,7 @@ const Header = () => {
         <header>
             <div className="asb-container">
                 <div className="content left">
-                    <div className="title">
+                    <div className="title animate__animated  animate__fadeIn">
                         <img src={Logo} />
                         <span>FE Engineer Test 1</span>
                     </div>
