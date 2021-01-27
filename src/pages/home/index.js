@@ -6,7 +6,7 @@ import MainContent from "../../components/main-content";
 const Home = () => {
     return (
         <>
-            {/* <Header /> */}
+            <Header />
             <Breadcrumb />
             <Summary />
             <MainContent />

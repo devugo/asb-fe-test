@@ -9,7 +9,7 @@ import './division-summary.scss';
 
 const DivisionSummary = () => {
     return (
-        <div className="division-summary asb-card">
+        <div className="division-summary animate__animated  animate__fadeInDown asb-card">
             <div className="card-body">
                 <div className="title">
                     <div className="icon">

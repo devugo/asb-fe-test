@@ -3,7 +3,7 @@ import './module-history.scss';
 
 const ModuleHistory = () => {
     return (
-        <div className="module-history asb-card">
+        <div className="module-history animate__animated  animate__fadeInUp asb-card">
             <div className="card-body">
                 <div className="title">
                     <div className="icon">

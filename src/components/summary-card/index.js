@@ -7,7 +7,7 @@ const SummaryCard = ({
     type
 }) => {
     return (
-        <div className="summary-card asb-card">
+        <div className="summary-card animate__animated animate__fadeIn asb-card">
             <div className="card-body">
                 <div className="text">
                     <h3>{number}</h3>

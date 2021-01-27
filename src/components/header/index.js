@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import Logo from '../../images/logo.svg';
 import HomeIcon from '../../images/icons/home.svg';
 import EntriesIcon from '../../images/icons/entries.svg';
@@ -10,6 +11,16 @@ import DropdownIcon from '../../images/icons/dropdown.svg';
 import './header.scss';
 
 const Header = () => {
+    const [open, setOpen] = useState(false);
+    const [openProfile, setOpenProfile] = useState(false);
+
+    useEffect(() => {
+        window.onclick = function(event) {
+            if (!event.target.matches(['.dropdown', '.profile', '.img', '.dropdown-icon'])) {
+                setOpenProfile(false);
+            }
+        }
+    }, () => setOpenProfile(true))
     return (
         <header>
             <div className="asb-container">
@@ -18,7 +29,10 @@ const Header = () => {
                         <img src={Logo} />
                         <span>FE Engineer Test 1</span>
                     </div>
-                    <ul className="nav-links">
+                    <div className={`hamburger ${open && 'open'} hide-desktop`} onClick={() => {setOpen(prevState => !prevState)}}>
+                        <span className={`hamburger__stick ${open && 'open'}`}></span>
+                    </div>
+                    <ul className={`nav-links animate__animated animate__fadeIn ${open ? 'show' : ''}`}>
                         <li className="link">
                             <a href="#">
                                 <img src={HomeIcon} />
@@ -46,14 +60,22 @@ const Header = () => {
                             <img src={SearchIcon} />
                         </div>
                     </form>
-                    <div className="notification">
-                        <img src={NotificationIcon} />
-                    </div>
-                    <div className="dropdown">
-                        <div className="profile">
-                            <img src={ProfileIcon} />
+                    <div className="togglers">
+                        <div className="notification">
+                            <img src={NotificationIcon} />
                         </div>
-                        <img src={DropdownIcon} />
+                        <div className="dropdown">
+                            <div className="profile" onClick={() => setOpenProfile(prevState => !prevState)}>
+                                <img class="img" alt="image" src={ProfileIcon} />
+                            </div>
+                            <img className="dropdown-icon" onClick={() => setOpenProfile(prevState => !prevState)} src={DropdownIcon} alt="dropdown-icon" />
+
+                            
+
+                            <div id="myDropdown" class={`dropdown-content animate__animated  animate__fadeInDown ${openProfile ? 'show' : ''}`}>
+                                <a href="#profile">Profile</a>
+                            </div>
+                        </div>
                     </div>
 
                 </div>
