@@ -3,6 +3,7 @@
 .division-summary {
     height: auto;
     padding-bottom: 30px;
+    width: 100%;
     .card-body {
         .title {
             display: flex;
@@ -44,5 +45,22 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (min-width: 588px){
+    .division-summary {
+        width: 258px;
+        margin-right: 10px;
+    }
+}
+
+@include media-md {
+    .division-summary {
+        height: auto;
+        padding-bottom: 30px;
+        margin-right: 0;
+        width: 100%;
+        width: 258px;
     }
 }

@@ -4,6 +4,8 @@
     height: auto;
     padding-bottom: 30px;
     box-shadow: none;
+    width: 100%;
+    margin-top: 20px;
     .card-body {
         .title {
             display: flex;
@@ -93,5 +95,23 @@
                 }
             }
         }
+    }
+}
+
+@media screen and (min-width: 588px){
+    .module-history {
+        width: 258px;
+        margin-left: 10px;
+        margin-top: 0;
+    }
+}
+
+@include media-md {
+    .module-history {
+        height: auto;
+        padding-bottom: 30px;
+        box-shadow: none;
+        margin-left: 0;
+        background-color: inherit;
     }
 }

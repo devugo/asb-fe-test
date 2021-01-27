@@ -31,7 +31,7 @@ const ModuleHistory = () => {
 
                         <div className="item">
                             <div className="name">
-                                <p>Searched “Journal Entries” on Division module</p>
+                                <p>Searched "Fingerprint record" on Division module</p>
                             </div>
                             <div className="footer">
                                 <p>22:10 15/09/2020</p>

@@ -17,7 +17,7 @@ const TableRow = ({
 }) => {
    
     return (
-        <div className="table-row">
+        <div className={`table-row ${header ? 'header' : 'body'}`}>
             {
                 header ? 
                 <>
@@ -45,32 +45,28 @@ const TableRow = ({
                         <input type="checkbox" />
                         <img src={TickIcon} alt="icon" />
                     </div>
-                    <div className="name">
+                    <div className="name non-header">
                         <span>{name}</span>
                     </div>
                     <div className="location">
-                        <div>
-                            <span>{place}</span>
-                            <span>{address}</span>
-                        </div>
+                        <span className="place">{place}</span>
+                        <span>{address}</span>
                     </div>
                     <div className="status">
-                        <span className={`${status.type == 'warning' ? 'warning' : ''}`}>{status.value}</span>
+                        <div className={`content ${status.type == 'warning' ? 'warning' : 'no-warning'}`}>
+                            <span>{status.value}</span>
+                        </div>
                     </div>
                     <div className="entries">
-                        <div>
-                            <span>{entries.count} Unique Entries</span>
-                            <span>{entries.text}</span>
-                        </div>
+                        <span className="count"><span className="dot"> </span> <span>{entries.count} Unique Entries</span></span>
+                        <span>{entries.text}</span>
                     </div>
                     <div className="risk-profile">
-                        <div>
-                            {
-                                risk.type == 'low' ? <img src={LowIcon} alt="icon" /> : risk.type == 'mid' ? <img src={MidIcon} alt="icon" /> : <img src={HighIcon} alt="icon" />
-                            }
-                            <span className={`${risk.type == 'low' ? 'low' : risk.type == 'mid' ? 'mid' : 'high'}`}>{risk.text}</span>
-                            <img src={PickerIcon} alt="icon" />
-                        </div>
+                        {
+                            risk.type == 'low' ? <img src={LowIcon} alt="icon" /> : risk.type == 'mid' ? <img src={MidIcon} alt="icon" /> : <img src={HighIcon} alt="icon" />
+                        }
+                        <span className={`${risk.type == 'low' ? 'low' : risk.type == 'mid' ? 'mid' : 'high'}`}>{risk.text}</span>
+                        <img className="picker" src={PickerIcon} alt="icon" />
                     </div>
                 </>
             }

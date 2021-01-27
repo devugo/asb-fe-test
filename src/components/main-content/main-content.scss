@@ -1,6 +1,56 @@
+@import '../../scss/variables';
+
 .main-content {
     .asb-container {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+
+        .content.left {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        .content.right {
+            width: 100%;
+        }
+    }
+}
+
+@include media-md {
+    .main-content {
+        .asb-container {
+            flex-direction: row;
+    
+            .content.left {
+                width: 258px;
+                display: block;
+                justify-content: center;
+            }
+            .content.right {
+                width: calc(100% - 258px);
+                padding-left: 25px;
+            }
+        }
+    }
+}
+
+@include media-lg {
+    .main-content {
+        .asb-container {
+            flex-direction: row;
+    
+            .content.left {
+                width: 258px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 1300px){
+    .main-content {
+        .asb-container {
+            flex-direction: row;
+        }
     }
 }
