@@ -1,0 +1,10 @@
+.overflow{
+    overflow: auto;
+    width: 100%;
+    background-color: red;
+    height: 500px;
+    .asb-table {
+        // width: 1170px;
+        overflow: hidden;
+    }
+}

@@ -1,0 +1,48 @@
+@import '../../scss/variables';
+
+.division-summary {
+    height: auto;
+    padding-bottom: 30px;
+    .card-body {
+        .title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            // justify-content: space-between;
+
+            .icon {
+                background-color: $primary-color;
+                width: 31px;
+                height: 31px;
+                border-radius: 6.5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            span {
+                font-size: 14px;
+                font-weight: 700;
+                margin-left: 13px;
+            }
+        }
+
+        .contact {
+            margin-top: 5px;
+            display: flex;
+
+            span {
+                margin-left: 13px;
+                color: $black-2;
+                font-size: 14px;
+                font-weight: 400;
+
+                a {
+                    color: #5771EE;
+                    text-decoration: underline;
+                    text-decoration-color: #5771EE;
+                }
+            }
+        }
+    }
+}

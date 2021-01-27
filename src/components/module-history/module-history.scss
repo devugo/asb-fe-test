@@ -1,0 +1,97 @@
+@import '../../scss/variables';
+
+.module-history {
+    height: auto;
+    padding-bottom: 30px;
+    box-shadow: none;
+    .card-body {
+        .title {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+
+            .icon {
+                background-color: $primary-color;
+                width: 31px;
+                height: 31px;
+                border-radius: 6.5px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            span {
+                font-size: 14px;
+                font-weight: 700;
+                margin-left: 13px;
+            }
+        }
+
+        .list-items {
+            display: flex;
+            position: relative;
+
+
+            .line {
+                position: absolute;
+                left: 0;
+                top: 0;
+                height: 190px;
+                width: 2px;
+                // background-color: red;
+                border: 1px dashed #C4C4C4;
+                margin-top: 5px;
+
+                .circle {
+                    position: absolute;
+                    width: 9px;
+                    height: 9px;
+                    background-color: #707070;;
+                    border-radius: 50%;
+                    left: -4.5px;
+
+                    &:nth-child(2){
+                        top: 90px;
+                    }
+
+                    &:nth-child(3){
+                        bottom: 0;
+                    }
+                }
+            }
+
+            .items {
+                margin-left: 15px;
+                .item {
+                    margin-bottom: 10px;
+                    .name {
+                        p{
+                            font-size: 12px;
+                            font-weight: 700;
+
+                        }
+                    }
+                    .footer {
+                        display: flex;
+                        
+                        p {
+                            font-size: 12px;
+                            color: #A1AACE;
+                            font-weight: 700;
+                        }
+
+                        .dot {
+                            height: 3px;
+                            width: 3px;
+                            background-color: #C4C4C4;
+                            border-radius: 50%;
+                            margin-top: 8px;
+                            margin-left: 6px;
+                            margin-right: 6px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

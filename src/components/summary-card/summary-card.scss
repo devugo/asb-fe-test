@@ -1,0 +1,68 @@
+@import '../../scss/variables';
+
+.summary-card {
+    margin: 10px;
+    width: 100%;
+
+    .card-body {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 10px;
+        // align-items: center;
+
+        h3 {
+            font-size: 32px;
+            font-weight: 700;
+            color: $black-1;
+        }
+
+        p {
+            margin-top: -15px;
+            font-size: 16px;
+            color: $grey-1;
+        }
+
+        .icon {
+            margin-top: 12px;
+
+            img {
+                width: 23px;
+                height: 23px;
+            }
+        }
+    }
+}
+
+@include media-sm {
+    .summary-card {
+        width: 200px;
+    }
+}
+
+@media screen and (min-width: 610px){
+    .summary-card {
+        width: 258px;
+    }
+ }
+
+// @include media-md {
+//     .summary-card {
+//         width: 200px;
+//         .card-body {
+    
+//             h3 {
+//                 font-size: 32px;
+//             }
+    
+//             p {
+//                 font-size: 16px;
+//             }
+//         }
+//     }
+// }
+
+@include media-lg {
+    .summary-card {
+        margin: 20px 0;
+    }
+}

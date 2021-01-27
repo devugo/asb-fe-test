@@ -1,0 +1,28 @@
+@import '../../scss/variables';
+
+.summary {
+    .asb-container {
+        .content {
+            
+            .asb-row {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    }
+}
+
+@include media-lg {
+    .summary {
+        .asb-container {
+            .content {
+                .asb-row {
+                    justify-content: space-between;
+                }
+            }
+        }
+    }
+}
+
+

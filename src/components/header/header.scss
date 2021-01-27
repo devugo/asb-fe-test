@@ -1,0 +1,120 @@
+@import '../../scss/variables';
+
+header {
+    box-shadow: inset 0px -1px 0px rgba(220, 225, 231, 0.572143);
+    height: 53px;
+    font-size: 14px;
+
+    .asb-container {
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        
+        .content {
+            &.left {
+                display: flex;
+                height: 100%;
+        
+                .title {
+                    display: flex;
+                    align-items: center;
+                    height: 100%;
+
+                    img {
+                        height: 27px;
+                        width: 32px;
+                    }
+
+                    span {
+                        color: $black;
+                    }
+                }
+
+                .nav-links {
+                    margin-left: 50px;
+                    display: flex;
+                    height: 100%;
+                    list-style: none;
+
+                    .link {
+                        width: 87px;
+                        height: 100%;
+
+                        a{
+                            height: 100%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            color: $grey-1;
+
+                            span {
+                                margin-left: 9.2px;
+                            }
+                        }
+
+                        &.active {
+                            background-color: $nav-bg-color-active;
+                            border-bottom: 4px solid $nav-color-active;
+
+                            span {
+                                color: $nav-color-active;
+                            }
+                        }
+                    
+                    
+                    }
+                }
+            }
+
+            &.right {
+                display: flex;
+                height: 100%;
+                align-items: center;
+                
+                form {
+                    .form-body {
+                        position: relative;
+
+                        input {
+                            width: 176px;
+                            height: 36px;
+                            border-radius: 4px;
+                            border: 1px solid #DCE1E7;
+                        }
+
+                        img {
+                            position: absolute;
+                            left: 16px;
+                            top: 10px;
+                        }
+                    }
+                }
+
+                .notification {
+                    margin-left: 32px;
+                    margin-right: 32px;
+                    height: 100%;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .dropdown {
+                    display: flex;
+
+                    .profile {
+                        background-color: #D8D8D8;
+                        width: 36px;
+                        height: 36px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                    }
+                }
+            }
+        }
+    }
+
+    
+}

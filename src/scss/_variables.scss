@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+$playfair: 'Playfair Display', serif;
+$montserrat: 'Montserrat', sans-serif;
+$opensans: 'Open Sans', sans-serif;
+
+
+$black: #000;
+$nav-color:#778699;
+$nav-color-active: #006FD6;
+$nav-bg-color-active: #DEEFFF;
+$black-1: #19191D;
+$black-2: #0F1A4F;
+$grey-1: #9696A0;
+$primary-color: #00A2D6;
+
+
+$header-text-color: #2e2e2e;
+$paragraph-text-color: #6c6c6c;
+
+$gray: #b4b4b4;
+$light-gray: #f7f7f7;
+$hover-color: #f3efef;
+$white: #fff;
+
+
+@mixin media-sm {
+    @media screen and (min-width: 500px){
+        @content;
+    }
+}
+@mixin media-md {
+    @media screen and (min-width: 768px){
+        @content;
+    }
+}
+@mixin media-lg {
+    @media screen and (min-width: 1100px){
+        @content;
+    }
+}
+@mixin media-xl {
+    @media screen and (min-width: 1600px){
+        @content;
+    }
+}
+
