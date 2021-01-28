@@ -6,7 +6,7 @@ import { Skeleton } from 'antd';
 import ModuleHistoryIcon from '../../images/icons/module-history.svg';
 
 //  Components
-import { Notification } from '../../ui-elements/notification';
+import { Notification } from '../../components/notification';
 import { Item } from './Item';
 
 //  Style

@@ -4,7 +4,7 @@ import { Skeleton } from 'antd';
 
 //  Compoennts
 import SummaryCard from '../../components/summary-card';
-import { Notification } from '../../ui-elements/notification';
+import { Notification } from '../../components/notification';
 
 //  Style
 import './summary.scss';

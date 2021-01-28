@@ -9,7 +9,7 @@ import MailIcon from '../../images/icons/mail.svg';
 import LocationIcon from '../../images/icons/location.svg';
 import JournalIcon from '../../images/icons/journal.svg';
 import FingerprintsIcon from '../../images/icons/fingerprints.svg';
-import { Notification } from '../../ui-elements/notification';
+import { Notification } from '../../components/notification';
 
 //  Style
 import './division-summary.scss';

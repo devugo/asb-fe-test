@@ -4,7 +4,7 @@ import { Skeleton } from 'antd';
 
 //  Components
 import TableRow from '../table-row';
-import { Notification } from '../../ui-elements/notification';
+import { Notification } from '../../components/notification';
 
 // Style
 import './table.scss';
