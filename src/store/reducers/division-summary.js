@@ -2,7 +2,13 @@ import { READ_DIVISION_SUMMARY } from '../actions/division-summary';
 import DivisionSummary from '../../models/DivisionSummary';
 
 const initialState = {
-    data: [],
+    data: {
+        address: '',
+        email: '',
+        fingerprints: '',
+        journal: '',
+        phone: ''
+    },
     loaded: false
 }
 
