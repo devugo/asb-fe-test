@@ -1,146 +1,59 @@
+import { useState, useCallback, useEffect } from 'react';
+import { useSelector, useDispatch } from'react-redux';
+import { Skeleton } from 'antd';
+
 import TableRow from '../table-row';
 import './table.scss';
 
+// Actions
+import * as resourcesActions from '../../store/actions/resources';
+import { Notification } from '../../ui-elements/notification';
+
 const Table = () => {
+    const [ error, setError ] = useState();
+    const [ loading, setLoading ] = useState(false);
+    const resources = useSelector(state => state.resources.data);
+    const dispatch = useDispatch();
+
+    const loadResources = useCallback(async () => {
+        
+        setError(null);
+        setLoading(true);
+        try {
+            await dispatch(resourcesActions.read());
+
+        } catch (err) {
+            setError(err.message);
+            Notification("error", "Connection Error", "There was an error connecting. Try back later!")
+        }
+        setLoading(false);
+    }, [dispatch, setLoading, setError]);
+
+    useEffect(() => {
+        loadResources();
+    }, []);
+
     return (
         <div className="asb-table animate__animated  animate__fadeInUp ">
-            <TableRow header />
-            <TableRow
-                name="Courtney Henry"
-                place="Lagos state"
-                address="775 Rolling Grreb Rd."
-                status={{
-                    type: "none",
-                    value: "No issues"
-                }}
-                entries={{
-                    count: 19,
-                    text: "Homogenous"
-                }}
-                risk={{
-                    type: "low",
-                    text: "Low Risk"
-                }}
-            />
-            <TableRow
-                name="Darell Steward"
-                place="Lagos state"
-                address="7529 E. Pecar St."
-                status={{
-                    type: "warning",
-                    value: "2 Issues found"
-                }}
-                entries={{
-                    count: 10,
-                    text: "Homogenous"
-                }}
-                risk={{
-                    type: "mid",
-                    text: "Mid Risk"
-                }}
-            />
-            <TableRow
-                name="Cody Fisher"
-                place="Lagos state"
-                address="3605 Parker Rd."
-                status={{
-                    type: "none",
-                    value: "No Issues"
-                }}
-                entries={{
-                    count: 8,
-                    text: "Homogenous"
-                }}
-                risk={{
-                    type: "mid",
-                    text: "Mid Risk"
-                }}
-            />
-            <TableRow
-                name="Bessie Cooper"
-                place="Lagos state"
-                address="775 Rolling Green Rd."
-                status={{
-                    type: "warning",
-                    value: "1 Issue found"
-                }}
-                entries={{
-                    count: 12,
-                    text: "Homogenous"
-                }}
-                risk={{
-                    type: "high",
-                    text: "High Risk"
-                }}
-            />
-            <TableRow
-                name="Annette Black"
-                place="Lagos state"
-                address="8080 Railroad St."
-                status={{
-                    type: "none",
-                    value: "No Issues"
-                }}
-                entries={{
-                    count: 13,
-                    text: "Homogenous"
-                }}
-                risk={{
-                    type: "low",
-                    text: "Low Risk"
-                }}
-            />
-            <TableRow
-                name="Jenny Wilson"
-                place="Lagos state"
-                address="8080 Railroad St."
-                status={{
-                    type: "warning",
-                    value: "5 Issues found"
-                }}
-                entries={{
-                    count: 18,
-                    text: "Homogenous"
-                }}
-                risk={{
-                    type: "high",
-                    text: "High Risk"
-                }}
-            />
-            <TableRow
-                name="Darlene Robertson"
-                place="Lagos state"
-                address="3890 Poplar Dr."
-                status={{
-                    type: "warning",
-                    value: "2 Issues found"
-                }}
-                entries={{
-                    count: 6,
-                    text: "Homogenous"
-                }}
-                risk={{
-                    type: "mid",
-                    text: "Mid Risk"
-                }}
-            />
-            <TableRow
-                name="Ralph Edwards"
-                place="Lagos state"
-                address="8558 Green Rd."
-                status={{
-                    type: "none",
-                    value: "No Issues"
-                }}
-                entries={{
-                    count: 14,
-                    text: "Homogenous"
-                }}
-                risk={{
-                    type: "low",
-                    text: "Low Risk"
-                }}
-            />
+               <Skeleton loading={loading} active>
+                <TableRow header />
+                {
+                    resources && resources.length > 0 &&
+                        resources.map((resource, index) => {
+                            return (
+                                <TableRow
+                                    key={index}
+                                    name={resource.name}
+                                    place={resource.location.state}
+                                    address={resource.location.address}
+                                    status={resource.status}
+                                    entries={resource.entries}
+                                    risk={resource.risk}
+                                />
+                            )
+                        })
+                }
+            </Skeleton>
         </div>
     )
 }

@@ -15,11 +15,10 @@ export const read = () => {
             
             const resData = await response.json();
 
-            console.log(resData);
-
             dispatch({
                 type: READ_RESOURCES,
-                data: resData
+                data: resData,
+                count: resData.length
             })
         } catch(err){
             throw err;

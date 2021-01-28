@@ -2,13 +2,9 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import ReduxThunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import productReducer from './reducers/products';
-import cartReducer from './reducers/cart';
 import resourceReducer from './reducers/resources';
 
 export const rootReducer = combineReducers({
-    products: productReducer,
-    cart: cartReducer,
     resources: resourceReducer
 });
 
