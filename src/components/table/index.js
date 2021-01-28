@@ -2,17 +2,21 @@ import { useState, useCallback, useEffect } from 'react';
 import { useSelector, useDispatch } from'react-redux';
 import { Skeleton } from 'antd';
 
+//  Components
 import TableRow from '../table-row';
+import { Notification } from '../../ui-elements/notification';
+
+// Style
 import './table.scss';
 
 // Actions
 import * as resourcesActions from '../../store/actions/resources';
-import { Notification } from '../../ui-elements/notification';
 
 const Table = () => {
     const [ error, setError ] = useState();
     const [ loading, setLoading ] = useState(false);
-    const resources = useSelector(state => state.resources.data);
+
+    const resources = useSelector(state => state.resources);
     const dispatch = useDispatch();
 
     const loadResources = useCallback(async () => {
@@ -38,8 +42,8 @@ const Table = () => {
                <Skeleton loading={loading} active>
                 <TableRow header />
                 {
-                    resources && resources.length > 0 &&
-                        resources.map((resource, index) => {
+                    resources.loaded && resources.data.length > 0 ?
+                        resources.data.map((resource, index) => {
                             return (
                                 <TableRow
                                     key={index}
@@ -52,6 +56,8 @@ const Table = () => {
                                 />
                             )
                         })
+                    :
+                    <div className="center" style={{display: 'flex', justifyContent: 'center'}}><p>No record found.</p></div>
                 }
             </Skeleton>
         </div>

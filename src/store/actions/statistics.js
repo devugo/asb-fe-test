@@ -1,13 +1,13 @@
 
 import * as CONSTANTS from '../../constants';
-export const READ_RESOURCES = 'READ_RESOURCES';
+export const READ_STATISTICS = 'READ_STATISTICS';
 
 export const read = () => {
     return async (dispatch, getState) => {
         try {
 
             const response = await fetch(
-                `${CONSTANTS.APIURL}/resources.json`, 
+                `${CONSTANTS.APIURL}/statistics.json`, 
             );
 
             if( !response.ok){
@@ -17,7 +17,7 @@ export const read = () => {
             const resData = await response.json();
 
             dispatch({
-                type: READ_RESOURCES,
+                type: READ_STATISTICS,
                 data: resData,
                 count: resData.length
             })

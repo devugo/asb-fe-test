@@ -3,9 +3,13 @@ import ReduxThunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import resourceReducer from './reducers/resources';
+import statisticReducer from './reducers/statistics';
+import divisionSummaryReducer from './reducers/division-summary';
 
 export const rootReducer = combineReducers({
-    resources: resourceReducer
+    resources: resourceReducer,
+    statistics: statisticReducer,
+    divisionSummary: divisionSummaryReducer,
 });
 
 export const middlewares = [ReduxThunk];
