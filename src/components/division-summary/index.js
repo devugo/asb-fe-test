@@ -33,7 +33,7 @@ const DivisionSummary = () => {
 
         } catch (err) {
             setError(err.message);
-            Notification("error", "Connection Error", "There was an error connecting. Try back later!")
+            // Notification("error", "Connection Error", "There was an error connecting. Try back later!")
         }
         setLoading(false);
     }, [dispatch, setLoading, setError]);
