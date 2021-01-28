@@ -1,9 +1,47 @@
+import { useState, useCallback, useEffect } from 'react';
+import { useSelector, useDispatch } from'react-redux';
+import { Skeleton } from 'antd';
+
+//  Images
 import ModuleHistoryIcon from '../../images/icons/module-history.svg';
+
+//  Components
+import { Notification } from '../../ui-elements/notification';
+import { Item } from './Item';
+
+//  Style
 import './module-history.scss';
 
+// Actions
+import * as moduleHistoryActions from '../../store/actions/module-history';
+
 const ModuleHistory = () => {
+    const [ error, setError ] = useState();
+    const [ loading, setLoading ] = useState(false);
+
+    const moduleHistory = useSelector(state => state.moduleHistory);
+    const dispatch = useDispatch();
+
+    const loadModuleHistory = useCallback(async () => {
+        
+        setError(null);
+        setLoading(true);
+        try {
+            await dispatch(moduleHistoryActions.read());
+
+        } catch (err) {
+            setError(err.message);
+            Notification("error", "Connection Error", "There was an error connecting. Try back later!")
+        }
+        setLoading(false);
+    }, [dispatch, setLoading, setError]);
+
+    useEffect(() => {
+        loadModuleHistory();
+    }, []);
+
     return (
-        <div className="module-history animate__animated  animate__fadeInUp asb-card">
+        <div className="module-history animate__animated  animate__fadeIn asb-card">
             <div className="card-body">
                 <div className="title">
                     <div className="icon">
@@ -13,43 +51,21 @@ const ModuleHistory = () => {
                 </div>
                 <div className="list-items">
                     <div className="line">
-                        <div className="circle"></div>
-                        <div className="circle"></div>
-                        <div className="circle"></div>
+                        {
+                            moduleHistory.loaded && moduleHistory.data.length > 0 &&
+                            moduleHistory.data.map((mh, index) => <div key={index} className="circle"></div>)
+                        }
                     </div>
                     <div className="items">
-                        <div className="item">
-                            <div className="name">
-                                <p>Searched “Journal Entries” on Division module</p>
-                            </div>
-                            <div className="footer">
-                                <p>22:10 15/09/2020</p>
-                                <span className="dot"></span>
-                                <p>Web</p>
-                            </div>
-                        </div>
 
-                        <div className="item">
-                            <div className="name">
-                                <p>Searched "Fingerprint record" on Division module</p>
-                            </div>
-                            <div className="footer">
-                                <p>22:10 15/09/2020</p>
-                                <span className="dot"></span>
-                                <p>Web</p>
-                            </div>
-                        </div>
-
-                        <div className="item">
-                            <div className="name">
-                                <p>Searched “Journal Entries” on Division module</p>
-                            </div>
-                            <div className="footer">
-                                <p>22:10 15/09/2020</p>
-                                <span className="dot"></span>
-                                <p>Web</p>
-                            </div>
-                        </div>
+                        <Skeleton loading={loading} active>
+                            {
+                                moduleHistory.loaded && moduleHistory.data.length > 0 ?
+                                    moduleHistory.data.map((mh, index) => <Item {...mh} key={index} />)
+                                :
+                                <div className="center" style={{display: 'flex', justifyContent: 'center'}}><p>No record found.</p></div>
+                            }
+                        </Skeleton>
                     </div>
                 </div>
             </div>

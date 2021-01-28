@@ -38,7 +38,7 @@ const Table = () => {
     }, []);
 
     return (
-        <div className="asb-table animate__animated  animate__fadeInUp ">
+        <div className="asb-table animate__animated animate__fadeIn">
                <Skeleton loading={loading} active>
                 <TableRow header />
                 {

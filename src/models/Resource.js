@@ -1,6 +1,5 @@
 class Resource {
-    constructor(id, name, location, status, entries, risk){
-        this.id = id;
+    constructor(name, location, status, entries, risk){
         this.name = name;
         this.location = location;
         this.status = status;

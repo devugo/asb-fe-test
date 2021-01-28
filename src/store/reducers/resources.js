@@ -13,7 +13,6 @@ const index = (state = initialState, action) => {
         
             let itemsData = action.data.map(item => 
                 new Resource(
-                    item.id,
                     item.name,
                     item.location,
                     item.status,

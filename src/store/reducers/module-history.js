@@ -1,5 +1,5 @@
-import { READ_STATISTICS } from '../actions/statistics';
-import Statistic from '../../models/Statistic';
+import { READ_MODULE_HISTORY } from '../actions/module-history';
+import ModuleHistory from '../../models/ModuleHistory';
 
 const initialState = {
     data: [],
@@ -9,12 +9,13 @@ const initialState = {
 
 const index = (state = initialState, action) => {
     switch(action.type){
-        case READ_STATISTICS:
+        case READ_MODULE_HISTORY:
         
             let itemsData = action.data.map(item => 
-                new Statistic(
-                    item.name,
-                    item.value
+                new ModuleHistory(
+                    item.activity,
+                    item.date,
+                    item.type
                 )
             );
             return {
