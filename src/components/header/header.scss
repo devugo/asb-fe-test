@@ -18,6 +18,7 @@ header {
                 background-color: #fff;
                 position: fixed;
                 z-index: 30;
+                margin-left: -5px;
 
                 .title {
                     width: 100%;
@@ -27,12 +28,14 @@ header {
                     align-items: center;
 
                     span {
-                        font-size: 14px;
+                        font-size: 16px;
+                        font-weight: 600;
+                        line-height: 22px;
                     }
                 }
                 .hamburger {
                     position: relative;
-                    right: 20px;
+                    right: 10px;
                     top: 10.5px;
                     width: 25px;
                     height:25px;
@@ -269,6 +272,7 @@ header {
                     background-color: unset;
                     position: unset;
                     z-index: unset;
+                    margin-left: unset;
     
                     .title {
                         margin-left: 20px;  
