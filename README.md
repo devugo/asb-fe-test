@@ -1,9 +1,8 @@
-SHOPMATE E-COMMERCE WEBSITE
+ASB FE TEST 1
 =============================
 
 ## Overview
-This project was built on React using hooks and Redux store
-So i basically set up the app like a real e-commerce app if i were to build one. 
+This project is built on React using hooks and Redux store
 
 ## Project Structure
 Below shows the project structure;
@@ -24,15 +23,11 @@ Below shows the project structure;
             - models ( All entities / data structure )
             - scss ( Default SCSS stylings )
             - store ( Redux store containing the actions and reducers )
-            App.js ( Routing was setup here )
+            App.js ( Routing setup )
             index.js ( App entry point )
             .......
 
 ```    
-
-## Component Library
-- [Ant Design](https://ant.design)
-
 
 ## Live Demo
 - [demo](https://asb-fe-test-by-devugo.netlify.app/).
@@ -40,10 +35,10 @@ Below shows the project structure;
 ### Site Preview Images
 
 #### Page Preview
-![Home page](https://asb-fe-test-by-devugo.netlify.app/static/page-preview.png)
+![Home page](https://asb-fe-test-by-devugo.netlify.app/page-preview.png)
 
 #### Responsive (Mobile)
-![Mobile Display](https://asb-fe-test-by-devugo.netlify.app/static/mobile-preview.png)
+![Mobile Display](https://asb-fe-test-by-devugo.netlify.app/mobile-preview.png)
 
 
 ## How to run locally
