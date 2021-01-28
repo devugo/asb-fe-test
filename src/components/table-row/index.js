@@ -53,7 +53,7 @@ const TableRow = ({
                         <span>{address}</span>
                     </div>
                     <div className="status">
-                        <div className={`content ${status.type == 'warning' ? 'warning' : 'no-warning'}`}>
+                        <div className={`content ${status.type === 'warning' ? 'warning' : 'no-warning'}`}>
                             <span>{status.value}</span>
                         </div>
                     </div>
@@ -63,9 +63,9 @@ const TableRow = ({
                     </div>
                     <div className="risk-profile">
                         {
-                            risk.type == 'low' ? <img src={LowIcon} alt="icon" /> : risk.type == 'mid' ? <img src={MidIcon} alt="icon" /> : <img src={HighIcon} alt="icon" />
+                            risk.type === 'low' ? <img src={LowIcon} alt="icon" /> : risk.type === 'mid' ? <img src={MidIcon} alt="icon" /> : <img src={HighIcon} alt="icon" />
                         }
-                        <span className={`${risk.type == 'low' ? 'low' : risk.type == 'mid' ? 'mid' : 'high'}`}>{risk.text}</span>
+                        <span className={`${risk.type === 'low' ? 'low' : risk.type === 'mid' ? 'mid' : 'high'}`}>{risk.text}</span>
                         <img className="picker" src={PickerIcon} alt="icon" />
                     </div>
                 </>

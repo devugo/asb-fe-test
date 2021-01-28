@@ -7,9 +7,9 @@ const Breadcrumb = () => {
         <div className="asb-breadcrumb">
             <div className="asb-container">
                 <div className="content">
-                    <p>Divisions</p>
-                    <img src={DropdownIcon} />
-                    <p>Module</p>
+                    <span>Divisions</span>
+                    <img src={DropdownIcon} alt="dropdown-icon" />
+                    <span>Module</span>
                 </div>
             </div>
         </div>

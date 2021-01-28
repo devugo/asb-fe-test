@@ -3,12 +3,6 @@ import App from './App';
 import { shallow } from 'enzyme';
 import { findByTestAttr, testStore } from './helpers/functions/testUtils';
 
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
-
 const setUp = (initialState = {}) => {
   const store = testStore(initialState);
   // const wrapper = shallow(<App store={store}  />).childAt(0).dive();

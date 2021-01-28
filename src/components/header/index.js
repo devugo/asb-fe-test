@@ -20,13 +20,13 @@ const Header = () => {
                 setOpenProfile(false);
             }
         }
-    }, () => setOpenProfile(true))
+    })
     return (
         <header>
             <div className="asb-container">
                 <div className="content left">
                     <div className="title animate__animated  animate__fadeIn">
-                        <img src={Logo} />
+                        <img src={Logo} alt="logo" />
                         <span>FE Engineer Test 1</span>
                     </div>
                     <div className={`hamburger ${open && 'open'} hide-desktop`} onClick={() => {setOpen(prevState => !prevState)}}>
@@ -35,19 +35,19 @@ const Header = () => {
                     <ul className={`nav-links animate__animated animate__fadeIn ${open ? 'show' : ''}`}>
                         <li className="link">
                             <a href="#">
-                                <img src={HomeIcon} />
+                                <img src={HomeIcon} alt="home-icon" />
                                 <span>Home</span>
                             </a>
                         </li>
                         <li className="link">
                             <a href="#">
-                                <img src={EntriesIcon} />
+                                <img src={EntriesIcon} alt="entries-icon" />
                                 <span>Entries</span>
                             </a>
                         </li>
                         <li className="link active">
                             <a href="#" className="active">
-                                <img src={DivisionsIcon} />
+                                <img src={DivisionsIcon} alt="divisions-icon" />
                                 <span>Divisions</span>
                             </a>
                         </li>
@@ -57,22 +57,22 @@ const Header = () => {
                     <form>
                         <div className="form-body">
                             <input />
-                            <img src={SearchIcon} />
+                            <img src={SearchIcon} alt="search-icon" />
                         </div>
                     </form>
                     <div className="togglers">
                         <div className="notification">
-                            <img src={NotificationIcon} />
+                            <img src={NotificationIcon} alt="notification-icon" />
                         </div>
                         <div className="dropdown">
                             <div className="profile" onClick={() => setOpenProfile(prevState => !prevState)}>
-                                <img class="img" alt="image" src={ProfileIcon} />
+                                <img className="img" alt="profile-photo" src={ProfileIcon} />
                             </div>
                             <img className="dropdown-icon" onClick={() => setOpenProfile(prevState => !prevState)} src={DropdownIcon} alt="dropdown-icon" />
 
                             
 
-                            <div id="myDropdown" class={`dropdown-content animate__animated  animate__fadeInDown ${openProfile ? 'show' : ''}`}>
+                            <div id="myDropdown" className={`dropdown-content animate__animated  animate__fadeInDown ${openProfile ? 'show' : ''}`}>
                                 <a href="#profile">Profile</a>
                             </div>
                         </div>

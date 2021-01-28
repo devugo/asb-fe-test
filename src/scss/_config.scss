@@ -1,6 +1,6 @@
 // Author: Ezenwankwo Ugochukwu
-// Email: info@devugo.com
-// Website: profile.devugo.com
+// Email: ugoezenwankwo@gmail.com
+// Website: https://devugo.com
 
 
 @font-face { font-family: GoogleSans; src: url('../fonts/google-sans-Font-Family/ProductSans-Regular.ttf'); } 
@@ -8,21 +8,10 @@
 html {
     scroll-behavior: smooth;
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
     font-family: 'GoogleSans', sans-serif;
-}
-
-@mixin transition-move {
-    transition: all 0.5s move;
-}
-
-@function set-text-color($color) {
-    @if(lightness($color) > 40%){
-        @return #000;
-    } @else {
-        @return #fff;
-    }
 }

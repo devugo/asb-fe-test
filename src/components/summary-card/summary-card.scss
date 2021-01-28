@@ -1,14 +1,13 @@
 @import '../../scss/variables';
 
 .summary-card {
-    margin: 10px;
+    margin: 15px 15px 7px 15px;
     width: 100%;
 
     .card-body {
         display: flex;
         justify-content: space-between;
         margin-top: 10px;
-        // align-items: center;
 
         h3 {
             font-size: 32px;
